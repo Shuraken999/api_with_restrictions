@@ -1,6 +1,8 @@
 from django_filters import rest_framework as filters, DateFromToRangeFilter, ChoiceFilter
+from rest_framework.generics import ListAPIView
 
 from advertisements.models import Advertisement, AdvertisementStatusChoices
+from advertisements.serializers import AdvertisementSerializer
 
 
 class AdvertisementFilter(filters.FilterSet):
@@ -12,4 +14,7 @@ class AdvertisementFilter(filters.FilterSet):
     class Meta:
         model = Advertisement
         fields = ['created_at', 'status']
+
+
+
 
